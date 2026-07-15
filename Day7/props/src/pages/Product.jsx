@@ -1,6 +1,18 @@
-import React from "react";
+import  { useState } from "react";
 
 const Product = ({ array }) => {
+
+  const [count,setCount] = useState(false)
+
+  const showalert=()=>{
+setCount(true)
+  
+console.log(count);
+
+ 
+  
+  }
+  
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-6">
       <h1 className="text-4xl font-bold text-center text-blue-600 mb-10">
@@ -31,9 +43,10 @@ const Product = ({ array }) => {
               {product.StockStatus}
             </p>
 
-            <button className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+            <button  onClick={showalert} className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
               View Details
             </button>
+            <p className= "bg- mt-2 rounded-xl p-5 ">{count?<p className= "bg-red-500 mt-2 rounded-xl p-5 ">This is true</p>:<p className= "bg-green-500 mt-2 rounded-xl p-5">This is false</p>}</p>
           </div>
         ))}
       </div>
