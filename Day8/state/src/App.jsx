@@ -8,9 +8,9 @@ const App = () => {
 
     console.log(count);
   }
-  const [name,setName]=useState(false)
+  const [name,setName]=useState(true)
   const change=()=>{
-    setName(true) 
+    setName(!name) 
   }
 
   const [cot,setCot]=useState("Harish")
@@ -34,8 +34,8 @@ const App = () => {
         </div>
         <div className='p-10 bg-blue-200 rounded-lg w-70 ml-10 mt-10 shadow-lg'>
           <p className='pl-20 pb-3 font-bold'>TASK 2</p>
-          <button onClick={change} className="w-full bg-blue-600 text-white py-3 rounded-xl text-lg font-semibold hover:bg-blue-700 active:scale-95 transition duration-300 shadow-lg"> CHANGE NAME </button>
-          <p className="bg-white w-20 h-10 p-20 rounded-md ml-5 flex items-center justify-center mt-5 text-2xl font-bold text-gray-800 shadow-lg">{name ? "welcome login":"login plese"}</p>
+          <button onClick={change} className={name?"w-full bg-white text-black py-3 rounded-xl text-lg font-semibold hover:bg-blue-700 active:scale-95 transition duration-300 shadow-lg":"w-full bg-black text-white py-3 rounded-xl text-lg font-semibold hover:bg-blue-700 active:scale-95 transition duration-300 shadow-lg"}> {name?"light":"dark"} </button>
+          <p className= {name?"bg-white p-10 mt-3 rounded-lg":"bg-black p-10 mt-3 text-white rounded-lg"}>{name ? "welcome login":"login plese"}</p>
 
         </div>
         <div className='p-10 bg-blue-200 rounded-lg w-70 ml-10 mt-10 shadow-lg'>
